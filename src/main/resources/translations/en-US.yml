@@ -1,0 +1,199 @@
+general:
+  prefix: "&6[Kernel]&r "
+
+kernel:
+  reload:
+    started: "&eReloading Kernel..."
+    success: "&aKernel reloaded."
+    failed: "&cKernel reload failed. Check the console."
+
+socialspy:
+  enabled: "&aSocial spy enabled."
+  disabled: "&aSocial spy disabled."
+  command: "&8[🔎]&7 {0}: &f{1}"
+  message: "&8[🔎]&7 [MSG] &f{0} &7-> &f{1}&7: &f{2}"
+  mail: "&8[🔎]&7 [MAIL] &f{0} &7-> &f{1}&7: &f{2}"
+
+trim:
+  invalid:
+    type: "&cThat trim type is not valid."
+    material: "&cThat trim material is not valid."
+    slot: "&cThat armor slot must be one of &fhead&c, &fchest&c, &flegs&c, or &ffeet&c."
+  none-equipped: "&cYou are not wearing any trimmable armor."
+  all:
+    applied: "&aApplied a &f{0} &a/ &f{1} &atrim to &f{2} &aarmor piece(s)."
+  slot:
+    missing: "&cYou are not wearing trimmable armor in your &f{0}&c slot."
+    applied: "&aApplied a &f{0} &a/ &f{1} &atrim to your &f{2}&a slot."
+
+utility:
+  hat:
+    empty-hand: "&cYou must be holding an item."
+    success: "&aYour hat has been updated."
+  enderchest:
+    target-offline: "&c{0} went offline before the ender chest changes could be saved."
+
+admin:
+  sudo:
+    none: "&cNo matching players were found."
+    exempt: "&c{0} is exempt from /sudo."
+    all-exempt: "&cAll matching players are exempt from /sudo."
+    executed: "&aForced &f{0} &ato run: &f/{1}"
+    executed-all: "&aForced &f{0} &aplayer(s) to run: &f/{1}"
+  smite:
+    success: "&aStruck lightning at &f{0}&a."
+
+error:
+  no-permission: "&cYou do not have permission to do that."
+  player-only: "&cThis command can only be used by a player."
+  player-not-online: "&cThat player is not online."
+  player-not-seen: "&cThat player has not been seen before."
+  player-ignoring-you: "&cThat player is ignoring you."
+  you-ignore-player: "&cYou are ignoring that player."
+
+home:
+  missing: "&cYou do not have a home named &f{0}&c."
+  world-unloaded: "&cThat home points to a world that is not loaded."
+  teleported: "&aTeleported to home &f{0}&a."
+  set: "&aSet home &f{0}&a."
+  deleted: "&aDeleted home &f{0}&a."
+
+teleport:
+  warmup:
+    start: "&eTeleporting in &f{0}&e second(s). Do not move."
+  request:
+    sent: "&aTeleport request sent to &f{0}&a."
+    received: "&e{0} wants to teleport to you."
+    instructions: "&eUse &f/tpaccept&e or &f/tpdeny&e within &f{0}&e seconds."
+    none: "&cYou have no pending teleport requests."
+    offline: "&cThat player is no longer online."
+    accepted:
+      requester: "&aYour teleport request to &f{0}&a was accepted."
+      target: "&aAccepted &f{0}''s&a teleport request."
+    canceled:
+      target: "&c{0}''s teleport to you was canceled."
+      target-moved: "&c{0}''s teleport to you was canceled because they moved."
+    denied:
+      requester: "&cYour teleport request to &f{0}&c was denied."
+      target: "&aDenied the teleport request."
+    blocked: "&cThat player is not accepting teleport requests."
+    self: "&cYou cannot send a teleport request to yourself."
+  back:
+    missing: "&cThere is no previous location to return to."
+    success: "&aReturned to your previous location."
+  tphere:
+    self: "&cYou are already here."
+    target: "&aTeleported to &f{0}&a."
+    sender: "&aTeleported &f{0}&a to you."
+  toggle:
+    on: "&aTeleport requests and direct teleports to you are now blocked."
+    off: "&aTeleport requests and direct teleports to you are now allowed."
+  tp:
+    self: "&cYou are already there."
+    blocked: "&cThat player is not accepting direct teleports. Use &f/tpo&c if you have access."
+    player: "&aTeleported to &f{0}&a."
+    coords:
+      invalid: "&cCoordinates must be numeric or use &f~&c relative offsets."
+      unsafe: "&cThose coordinates do not look safe to teleport into."
+      success: "&aTeleported to &f{0}, {1}, {2}&a."
+      other:
+        sender: "&aTeleported &f{0}&a to &f{1}, {2}, {3}&a."
+        target: "&aYou were teleported to &f{0}, {1}, {2}&a."
+
+communication:
+  msg:
+    self: "&cYou cannot message yourself."
+    outgoing: "&7[To {0}] &f{1}"
+    incoming: "&7[From {0}] &f{1}"
+  reply:
+    none: "&cThere is nobody to reply to."
+  ignore:
+    self: "&cYou cannot ignore yourself."
+    enabled: "&aYou are now ignoring &f{0}&a."
+    disabled: "&aYou are no longer ignoring &f{0}&a."
+  mail:
+    self: "&cYou cannot mail yourself."
+    incoming-live: "&6[Mail] &7<{0}> &f{1}"
+    sent: "&aMail sent to &f{0}&a."
+    summary: "&6[Mail] &eYou have &f{0}&e new message(s)."
+    entry: "&6[Mail] &f{0} &7<{1}> &f{2}"
+  nick:
+    cleared: "&aNickname cleared."
+    in-use: "&cThat nickname is already in use."
+    matches-player-name: "&cThat nickname matches an existing player name."
+    set: "&aNickname set to &f{0}&a."
+    other:
+      cleared: "&aCleared &f{0}''s&a nickname."
+      set: "&aSet &f{0}''s&a nickname to &f{1}&a."
+    too-long: "&cNicknames can be at most &f{0}&c characters."
+  seen:
+    online: "&a{0} is online right now."
+    none: "&cNo last-seen data exists for that player."
+    result: "&a{0} was last seen at &f{1} &7({2} ago)."
+    ip: "&7IP: &f{0}"
+
+economy:
+  balance:
+    result: "&a{0}''s balance: &f{1}"
+  pay:
+    self: "&cYou cannot pay yourself."
+    sent: "&aSent &f{0} &ato &f{1}&a."
+    received: "&aYou received &f{0} &afrom &f{1}&a."
+  baltop:
+    none: "&cNo balance data is available yet."
+    header: "&6Top balances:"
+    entry: "&e{0}. &f{1} &7- &a{2}"
+  eco:
+    updated: "&aUpdated &f{0}''s&a balance to &f{1}&a."
+    updated-notify: "&aYour balance was updated to &f{0}&a."
+  error:
+    positive: "&cAmount must be a positive number."
+    numeric: "&cAmount must be numeric."
+    negative-balance: "&cBalances cannot be negative."
+    insufficient-funds: "&cYou do not have enough money."
+    account-not-found: "&cThat account could not be found."
+    generic: "&cThe economy operation could not be completed."
+
+player:
+  heal:
+    success: "&aHealth restored."
+    other:
+      sender: "&aHealed &f{0}&a."
+      target: "&aYour health was restored."
+  feed:
+    success: "&aHunger restored."
+  clearinventory:
+    success: "&aInventory cleared."
+  fly:
+    enabled: "&aFlight enabled."
+    disabled: "&aFlight disabled."
+    other:
+      sender-enabled: "&aEnabled flight for &f{0}&a."
+      sender-disabled: "&aDisabled flight for &f{0}&a."
+      target-enabled: "&aYour flight was enabled."
+      target-disabled: "&aYour flight was disabled."
+  god:
+    enabled: "&aGod mode enabled."
+    disabled: "&aGod mode disabled."
+    other:
+      sender-enabled: "&aEnabled god mode for &f{0}&a."
+      sender-disabled: "&aDisabled god mode for &f{0}&a."
+      target-enabled: "&aYour god mode was enabled."
+      target-disabled: "&aYour god mode was disabled."
+  speed:
+    invalid: "&cSpeed must be &fdefault &cor a number between &f1.0 &cand &f10.0&c."
+    walk-set: "&aWalk speed set to &f{0}&a."
+    walk-reset: "&aWalk speed reset to default."
+    fly-set: "&aFly speed set to &f{0}&a."
+    fly-reset: "&aFly speed reset to default."
+  gamemode:
+    self: "&aGamemode updated to &f{0}&a."
+    other:
+      sender: "&aSet &f{0}''s&a gamemode to &f{1}&a."
+      target: "&aYour gamemode was updated to &f{0}&a."
+
+time:
+  moments: "moments"
+  minutes: "{0} minute(s)"
+  hours: "{0} hour(s)"
+  days: "{0} day(s)"

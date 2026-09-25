@@ -1,0 +1,534 @@
+name: Kernel
+version: '1.0.0-SNAPSHOT'
+main: com.earthpol.kernel.Kernel
+api-version: '1.21'
+folia-supported: true
+softdepend: [Vault, VaultUnlocked]
+
+commands:
+  kernel:
+    description: Kernel admin commands.
+    usage: /kernel reload
+    permission: kernel.command.kernel
+  home:
+    description: Teleport to one of your homes.
+    usage: /home [name]
+    permission: kernel.command.home
+  sethome:
+    description: Set a home at your current location.
+    usage: /sethome [name]
+    permission: kernel.command.sethome
+  delhome:
+    description: Delete one of your homes.
+    usage: /delhome [name]
+    permission: kernel.command.delhome
+  tpa:
+    description: Request a teleport to another player.
+    usage: /tpa <player>
+    permission: kernel.command.tpa
+  tpaccept:
+    description: Accept the latest teleport request.
+    usage: /tpaccept
+    permission: kernel.command.tpaccept
+  tpdeny:
+    description: Deny the latest teleport request.
+    usage: /tpdeny
+    permission: kernel.command.tpdeny
+  back:
+    description: Return to your previous death or teleport location.
+    usage: /back
+    permission: kernel.command.back
+  msg:
+    description: Send a private message.
+    usage: /msg <player> <message>
+    aliases: [tell, whisper, w]
+    permission: kernel.command.msg
+  r:
+    description: Reply to the last private message.
+    usage: /r <message>
+    aliases: [reply]
+    permission: kernel.command.reply
+  ignore:
+    description: Ignore or unignore a player.
+    usage: /ignore <player>
+    permission: kernel.command.ignore
+  mail:
+    description: Send offline mail.
+    usage: /mail send <player> <message>
+    permission: kernel.command.mail
+  heal:
+    description: Restore your health.
+    usage: /heal [player]
+    permission: kernel.command.heal
+  feed:
+    description: Restore your hunger.
+    usage: /feed
+    permission: kernel.command.feed
+  clearinventory:
+    description: Clear your inventory.
+    usage: /clearinventory
+    aliases: [ci, clearinv]
+    permission: kernel.command.clearinventory
+  bal:
+    description: Check a balance.
+    usage: /bal [player]
+    aliases: [balance, money]
+    permission: kernel.command.bal
+  pay:
+    description: Pay another player.
+    usage: /pay <player> <amount>
+    permission: kernel.command.pay
+  baltop:
+    description: View the richest players.
+    usage: /baltop
+    permission: kernel.command.baltop
+  eco:
+    description: Admin economy controls.
+    usage: /eco <give|take|set> <player> <amount>
+    permission: kernel.command.eco
+  gamemode:
+    description: Change a gamemode.
+    usage: /gamemode <mode> [player]
+    aliases: [gm]
+    permission: kernel.command.gamemode
+  gmc:
+    description: Change to creative mode.
+    usage: /gmc [player]
+    permission: kernel.command.gamemode.creative
+  gms:
+    description: Change to survival mode.
+    usage: /gms [player]
+    permission: kernel.command.gamemode.survival
+  gma:
+    description: Change to adventure mode.
+    usage: /gma [player]
+    permission: kernel.command.gamemode.adventure
+  gmsp:
+    description: Change to spectator mode.
+    usage: /gmsp [player]
+    permission: kernel.command.gamemode.spectator
+  fly:
+    description: Toggle flight.
+    usage: /fly [player]
+    permission: kernel.command.fly
+  god:
+    description: Toggle invulnerability.
+    usage: /god [player]
+    permission: kernel.command.god
+  speed:
+    description: Set your walk or fly speed.
+    usage: /speed <speed|default> or /speed <walk|fly> <speed|default>
+    permission: kernel.command.speed
+  tp:
+    description: Teleport to a player or coordinates.
+    usage: /tp <player>|<x|~offset> <y|~offset> <z|~offset>|<player> <x|~offset> <y|~offset> <z|~offset>
+    permission: kernel.command.tp
+  tppos:
+    description: Teleport to coordinates.
+    usage: /tppos <x|~offset> <y|~offset> <z|~offset>
+    permission: kernel.command.tppos
+  tphere:
+    description: Teleport a player to you.
+    usage: /tphere <player>
+    permission: kernel.command.tphere
+  tptoggle:
+    description: Toggle teleport requests and direct teleports to you.
+    usage: /tptoggle
+    permission: kernel.command.tptoggle
+  tpo:
+    description: Teleport to a player while bypassing teleport toggle.
+    usage: /tpo <player>
+    permission: kernel.command.tpo
+  nick:
+    description: Set a nickname.
+    usage: /nick <name|reset> or /nick <player> <name|reset>
+    permission: kernel.command.nick
+  seen:
+    description: Check when a player was last seen.
+    usage: /seen <player>
+    permission: kernel.command.seen
+  socialspy:
+    description: Toggle social spy.
+    usage: /socialspy
+    aliases: [ss]
+    permission: kernel.command.socialspy
+  trim:
+    description: Apply an armor trim to your equipped armor.
+    usage: /trim <type> <material> [head|chest|legs|feet]
+    permission: kernel.command.trim
+  hat:
+    description: Put the item in your hand on your head.
+    usage: /hat
+    permission: kernel.command.hat
+  sudo:
+    description: Force a player to execute a command.
+    usage: /sudo <player|*> <command>
+    permission: kernel.command.sudo
+  smite:
+    description: Strike lightning at a player.
+    usage: /smite <player>
+    aliases: [lightning]
+    permission: kernel.command.smite
+  workbench:
+    description: Open a portable crafting table.
+    usage: /workbench
+    aliases: [craft, wb, wbench]
+    permission: kernel.command.workbench
+  stonecutter:
+    description: Open a portable stonecutter.
+    usage: /stonecutter
+    permission: kernel.command.stonecutter
+  cartographytable:
+    description: Open a portable cartography table.
+    usage: /cartographytable
+    aliases: [carttable]
+    permission: kernel.command.cartographytable
+  smithingtable:
+    description: Open a portable smithing table.
+    usage: /smithingtable
+    aliases: [smithtable]
+    permission: kernel.command.smithingtable
+  grindstone:
+    description: Open a portable grindstone.
+    usage: /grindstone
+    permission: kernel.command.grindstone
+  loom:
+    description: Open a portable loom.
+    usage: /loom
+    permission: kernel.command.loom
+  enderchest:
+    description: Open your ender chest.
+    usage: /enderchest [player]
+    aliases: [ec, echest, endersee]
+    permission: kernel.command.enderchest
+  anvil:
+    description: Open a portable anvil.
+    usage: /anvil
+    permission: kernel.command.anvil
+
+permissions:
+  kernel.command.*:
+    default: op
+    children:
+      kernel.command.kernel: true
+      kernel.command.kernel.reload: true
+      kernel.command.home: true
+      kernel.command.sethome: true
+      kernel.command.delhome: true
+      kernel.command.tpa: true
+      kernel.command.tpaccept: true
+      kernel.command.tpdeny: true
+      kernel.command.back: true
+      kernel.command.msg: true
+      kernel.command.reply: true
+      kernel.command.ignore: true
+      kernel.command.mail: true
+      kernel.command.heal: true
+      kernel.command.heal.others: true
+      kernel.command.feed: true
+      kernel.command.clearinventory: true
+      kernel.command.bal: true
+      kernel.command.bal.others: true
+      kernel.command.pay: true
+      kernel.command.baltop: true
+      kernel.command.eco: true
+      kernel.command.eco.give: true
+      kernel.command.eco.take: true
+      kernel.command.eco.set: true
+      kernel.command.gamemode: true
+      kernel.command.gamemode.survival: true
+      kernel.command.gamemode.creative: true
+      kernel.command.gamemode.adventure: true
+      kernel.command.gamemode.spectator: true
+      kernel.command.gamemode.others: true
+      kernel.command.fly: true
+      kernel.command.fly.others: true
+      kernel.command.god: true
+      kernel.command.god.others: true
+      kernel.command.speed: true
+      kernel.command.tp: true
+      kernel.command.tp.others: true
+      kernel.command.tp.coordinates: true
+      kernel.command.tppos: true
+      kernel.command.tphere: true
+      kernel.command.tptoggle: true
+      kernel.command.tpo: true
+      kernel.command.teleport.bypass-warmup: true
+      kernel.command.nick: true
+      kernel.command.nick.others: true
+      kernel.command.seen: true
+      kernel.command.seen.ip: true
+      kernel.command.socialspy: true
+      kernel.command.trim: true
+      kernel.command.trim.*: true
+      kernel.command.hat: true
+      kernel.command.sudo: true
+      kernel.command.smite: true
+      kernel.command.workbench: true
+      kernel.command.stonecutter: true
+      kernel.command.cartographytable: true
+      kernel.command.smithingtable: true
+      kernel.command.grindstone: true
+      kernel.command.loom: true
+      kernel.command.enderchest: true
+      kernel.command.enderchest.others: true
+      kernel.command.enderchest.modify.others: true
+      kernel.command.anvil: true
+  kernel.command.kernel:
+    default: op
+  kernel.command.kernel.reload:
+    default: op
+  kernel.command.home:
+    default: op
+  kernel.command.sethome:
+    default: op
+  kernel.command.delhome:
+    default: op
+  kernel.command.tpa:
+    default: op
+  kernel.command.tpaccept:
+    default: op
+  kernel.command.tpdeny:
+    default: op
+  kernel.command.back:
+    default: op
+  kernel.command.msg:
+    default: op
+  kernel.command.reply:
+    default: op
+  kernel.command.ignore:
+    default: op
+  kernel.command.mail:
+    default: op
+  kernel.command.heal:
+    default: op
+  kernel.command.heal.others:
+    default: op
+  kernel.command.feed:
+    default: op
+  kernel.command.clearinventory:
+    default: op
+  kernel.command.bal:
+    default: op
+  kernel.command.bal.others:
+    default: op
+  kernel.command.pay:
+    default: op
+  kernel.command.baltop:
+    default: op
+  kernel.command.eco:
+    default: op
+  kernel.command.eco.give:
+    default: op
+  kernel.command.eco.take:
+    default: op
+  kernel.command.eco.set:
+    default: op
+  kernel.command.gamemode:
+    default: op
+  kernel.command.gamemode.survival:
+    default: op
+  kernel.command.gamemode.creative:
+    default: op
+  kernel.command.gamemode.adventure:
+    default: op
+  kernel.command.gamemode.spectator:
+    default: op
+  kernel.command.gamemode.others:
+    default: op
+  kernel.command.fly:
+    default: op
+  kernel.command.fly.others:
+    default: op
+  kernel.command.god:
+    default: op
+  kernel.command.god.others:
+    default: op
+  kernel.command.speed:
+    default: op
+  kernel.command.tp:
+    default: op
+  kernel.command.tp.others:
+    default: op
+  kernel.command.tp.coordinates:
+    default: op
+  kernel.command.tppos:
+    default: op
+  kernel.command.tphere:
+    default: op
+  kernel.command.tptoggle:
+    default: op
+  kernel.command.tpo:
+    default: op
+  kernel.command.teleport.bypass-warmup:
+    default: op
+  kernel.command.nick:
+    default: op
+  kernel.command.nick.others:
+    default: op
+  kernel.command.seen:
+    default: op
+  kernel.command.seen.ip:
+    default: op
+  kernel.command.socialspy:
+    default: op
+  kernel.command.trim:
+    default: op
+  kernel.command.trim.*:
+    default: op
+    children:
+      kernel.command.trim.type.*: true
+      kernel.command.trim.material.*: true
+      kernel.command.trim.slot.*: true
+  kernel.command.trim.type.*:
+    default: op
+    children:
+      kernel.command.trim.type.bolt: true
+      kernel.command.trim.type.coast: true
+      kernel.command.trim.type.dune: true
+      kernel.command.trim.type.eye: true
+      kernel.command.trim.type.flow: true
+      kernel.command.trim.type.host: true
+      kernel.command.trim.type.raiser: true
+      kernel.command.trim.type.rib: true
+      kernel.command.trim.type.sentry: true
+      kernel.command.trim.type.shaper: true
+      kernel.command.trim.type.silence: true
+      kernel.command.trim.type.snout: true
+      kernel.command.trim.type.spire: true
+      kernel.command.trim.type.tide: true
+      kernel.command.trim.type.vex: true
+      kernel.command.trim.type.ward: true
+      kernel.command.trim.type.wayfinder: true
+      kernel.command.trim.type.wild: true
+  kernel.command.trim.material.*:
+    default: op
+    children:
+      kernel.command.trim.material.amethyst: true
+      kernel.command.trim.material.copper: true
+      kernel.command.trim.material.diamond: true
+      kernel.command.trim.material.emerald: true
+      kernel.command.trim.material.gold: true
+      kernel.command.trim.material.iron: true
+      kernel.command.trim.material.lapis: true
+      kernel.command.trim.material.netherite: true
+      kernel.command.trim.material.quartz: true
+      kernel.command.trim.material.redstone: true
+      kernel.command.trim.material.resin: true
+  kernel.command.trim.slot.*:
+    default: op
+    children:
+      kernel.command.trim.slot.head: true
+      kernel.command.trim.slot.chest: true
+      kernel.command.trim.slot.legs: true
+      kernel.command.trim.slot.feet: true
+  kernel.command.trim.type.bolt:
+    default: op
+  kernel.command.trim.type.coast:
+    default: op
+  kernel.command.trim.type.dune:
+    default: op
+  kernel.command.trim.type.eye:
+    default: op
+  kernel.command.trim.type.flow:
+    default: op
+  kernel.command.trim.type.host:
+    default: op
+  kernel.command.trim.type.raiser:
+    default: op
+  kernel.command.trim.type.rib:
+    default: op
+  kernel.command.trim.type.sentry:
+    default: op
+  kernel.command.trim.type.shaper:
+    default: op
+  kernel.command.trim.type.silence:
+    default: op
+  kernel.command.trim.type.snout:
+    default: op
+  kernel.command.trim.type.spire:
+    default: op
+  kernel.command.trim.type.tide:
+    default: op
+  kernel.command.trim.type.vex:
+    default: op
+  kernel.command.trim.type.ward:
+    default: op
+  kernel.command.trim.type.wayfinder:
+    default: op
+  kernel.command.trim.type.wild:
+    default: op
+  kernel.command.trim.material.amethyst:
+    default: op
+  kernel.command.trim.material.copper:
+    default: op
+  kernel.command.trim.material.diamond:
+    default: op
+  kernel.command.trim.material.emerald:
+    default: op
+  kernel.command.trim.material.gold:
+    default: op
+  kernel.command.trim.material.iron:
+    default: op
+  kernel.command.trim.material.lapis:
+    default: op
+  kernel.command.trim.material.netherite:
+    default: op
+  kernel.command.trim.material.quartz:
+    default: op
+  kernel.command.trim.material.redstone:
+    default: op
+  kernel.command.trim.material.resin:
+    default: op
+  kernel.command.trim.slot.head:
+    default: op
+  kernel.command.trim.slot.chest:
+    default: op
+  kernel.command.trim.slot.legs:
+    default: op
+  kernel.command.trim.slot.feet:
+    default: op
+  kernel.command.hat:
+    default: op
+  kernel.command.sudo:
+    default: op
+  kernel.command.sudo.exempt:
+    default: false
+  kernel.command.smite:
+    default: op
+  kernel.command.workbench:
+    default: op
+  kernel.command.stonecutter:
+    default: op
+  kernel.command.cartographytable:
+    default: op
+  kernel.command.smithingtable:
+    default: op
+  kernel.command.grindstone:
+    default: op
+  kernel.command.loom:
+    default: op
+  kernel.command.enderchest:
+    default: op
+  kernel.command.enderchest.others:
+    default: op
+  kernel.command.enderchest.modify.others:
+    default: op
+  kernel.command.anvil:
+    default: op
+  kerenel.command.stonecutter:
+    default: op
+    children:
+      kernel.command.stonecutter: true
+  kerenel.command.grindstone:
+    default: op
+    children:
+      kernel.command.grindstone: true
+  kerenel.command.loom:
+    default: op
+    children:
+      kernel.command.loom: true
+  kerenel.command.anvil:
+    default: op
+    children:
+      kernel.command.anvil: true

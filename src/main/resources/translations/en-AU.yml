@@ -1,0 +1,139 @@
+general:
+  prefix: "&6[ןǝuɹǝꓘ]&r "
+
+kernel:
+  reload:
+    started: "&eReloading Kernel..."
+    success: "&aKernel reloaded."
+    failed: "&cKernel reload failed. Check the console."
+
+socialspy:
+  enabled: "&aSocial spy enabled."
+  disabled: "&aSocial spy disabled."
+  command: "&8[🔎]&7 {0}: &f{1}"
+  message: "&8[🔎]&7 [MSG] &f{0} &7-> &f{1}&7: &f{2}"
+  mail: "&8[🔎]&7 [MAIL] &f{0} &7-> &f{1}&7: &f{2}"
+
+error:
+  no-permission: "&cno⅄ op ʇou ǝʌɐɥ uoᴉssᴉɯɹǝd oʇ op ʇɐɥʇ˙"
+  player-only: "&csᴉɥ⊥ puɐɯɯoɔ uɐɔ ʎןuo ǝq pǝsn ʎq ɐ ɹǝʎɐןd˙"
+  player-not-online: "&cʇɐɥ⊥ ɹǝʎɐןd sᴉ ʇou ǝuᴉןuo˙"
+  player-not-seen: "&cʇɐɥ⊥ ɹǝʎɐןd sɐɥ ʇou uǝǝq uǝǝs ǝɹoɟǝq˙"
+  player-ignoring-you: "&cʇɐɥ⊥ ɹǝʎɐןd sᴉ ƃuᴉɹouƃᴉ noʎ˙"
+  you-ignore-player: "&cno⅄ ǝɹɐ ƃuᴉɹouƃᴉ ʇɐɥʇ ɹǝʎɐןd˙"
+
+home:
+  missing: "&cno⅄ op ʇou ǝʌɐɥ ɐ ǝɯoɥ pǝɯɐu &f{0}&c˙"
+  world-unloaded: "&cʇɐɥ⊥ ǝɯoɥ sʇuᴉod oʇ ɐ pןɹoʍ ʇɐɥʇ sᴉ ʇou pǝpɐoן˙"
+  teleported: "&apǝʇɹodǝןǝ⊥ oʇ ǝɯoɥ &f{0}&a˙"
+  set: "&aʇǝS ǝɯoɥ &f{0}&a˙"
+  deleted: "&apǝʇǝןǝᗡ ǝɯoɥ &f{0}&a˙"
+
+teleport:
+  warmup:
+    start: "&eƃuᴉʇɹodǝןǝ⊥ uᴉ &f{0}&e puoɔǝs(s)˙ oᗡ ʇou ǝʌoɯ˙"
+  request:
+    sent: "&aʇɹodǝןǝ⊥ ʇsǝnbǝɹ ʇuǝs oʇ &f{0}&a˙"
+    received: "&e{0} sʇuɐʍ oʇ ʇɹodǝןǝʇ oʇ noʎ˙"
+    instructions: "&eǝs∩ &f/ʇdǝɔɔɐdʇ&e ɹo &f/ʎuǝpdʇ&e uᴉɥʇᴉʍ &f{0}&e spuoɔǝs˙"
+    none: "&cno⅄ ǝʌɐɥ ou ƃuᴉpuǝd ʇɹodǝןǝʇ sʇsǝnbǝɹ˙"
+    offline: "&cʇɐɥ⊥ ɹǝʎɐןd sᴉ ou ɹǝƃuoן ǝuᴉןuo˙"
+    accepted:
+      requester: "&aɹno⅄ ʇɹodǝןǝʇ ʇsǝnbǝɹ oʇ &f{0}&a sɐʍ pǝʇdǝɔɔɐ˙"
+      target: "&apǝʇdǝɔɔ∀ &f{0}''s&a ʇɹodǝןǝʇ ʇsǝnbǝɹ˙"
+    denied:
+      requester: "&cɹno⅄ ʇɹodǝןǝʇ ʇsǝnbǝɹ oʇ &f{0}&c sɐʍ pǝᴉuǝp˙"
+      target: "&apǝᴉuǝᗡ ǝɥʇ ʇɹodǝןǝʇ ʇsǝnbǝɹ˙"
+    blocked: "&cʇɐɥ⊥ ɹǝʎɐןd sᴉ ʇou ƃuᴉʇdǝɔɔɐ ʇɹodǝןǝʇ sʇsǝnbǝɹ˙"
+    self: "&cno⅄ ʇouuɐɔ puǝs ɐ ʇɹodǝןǝʇ ʇsǝnbǝɹ oʇ ɟןǝsɹnoʎ˙"
+  back:
+    missing: "&cǝɹǝɥ⊥ sᴉ ou snoᴉʌǝɹd uoᴉʇɐɔoן oʇ uɹnʇǝɹ oʇ˙"
+    success: "&apǝuɹnʇǝᴚ oʇ ɹnoʎ snoᴉʌǝɹd uoᴉʇɐɔoן˙"
+  tphere:
+    self: "&cno⅄ ǝɹɐ ʎpɐǝɹןɐ ǝɹǝɥ˙"
+    target: "&apǝʇɹodǝןǝ⊥ oʇ &f{0}&a˙"
+    sender: "&apǝʇɹodǝןǝ⊥ &f{0}&a oʇ noʎ˙"
+  toggle:
+    on: "&aʇɹodǝןǝ⊥ sʇsǝnbǝɹ puɐ ʇɔǝɹᴉp sʇɹodǝןǝʇ oʇ noʎ ǝɹɐ ʍou pǝʞɔoןq˙"
+    off: "&aʇɹodǝןǝ⊥ sʇsǝnbǝɹ puɐ ʇɔǝɹᴉp sʇɹodǝןǝʇ oʇ noʎ ǝɹɐ ʍou pǝʍoןןɐ˙"
+  tp:
+    self: "&cno⅄ ǝɹɐ ʎpɐǝɹןɐ ǝɹǝɥʇ˙"
+    blocked: "&cʇɐɥ⊥ ɹǝʎɐןd sᴉ ʇou ƃuᴉʇdǝɔɔɐ ʇɔǝɹᴉp sʇɹodǝןǝʇ˙ ǝs∩ &f/odʇ&c ɟᴉ noʎ ǝʌɐɥ ssǝɔɔɐ˙"
+    player: "&apǝʇɹodǝןǝ⊥ oʇ &f{0}&a˙"
+    coords:
+      invalid: "&csǝʇɐuᴉpɹooƆ ʇsnɯ ǝq ɔᴉɹǝɯnu˙"
+      unsafe: "&cǝsoɥ⊥ sǝʇɐuᴉpɹooɔ op ʇou ʞooן ǝɟɐs oʇ ʇɹodǝןǝʇ oʇuᴉ˙"
+      success: "&apǝʇɹodǝןǝ⊥ oʇ &f{0}, {1}, {2}&a˙"
+
+communication:
+  msg:
+    self: "&cno⅄ ʇouuɐɔ ǝƃɐssǝɯ ɟןǝsɹnoʎ˙"
+    outgoing: "&7[o⊥ {0}] &f{1}"
+    incoming: "&7[ɯoɹℲ {0}] &f{1}"
+  reply:
+    none: "&cǝɹǝɥ⊥ sᴉ ʎpoqou oʇ ʎןdǝɹ oʇ˙"
+  ignore:
+    self: "&cno⅄ ʇouuɐɔ ǝɹouƃᴉ ɟןǝsɹnoʎ˙"
+    enabled: "&ano⅄ ǝɹɐ ʍou ƃuᴉɹouƃᴉ &f{0}&a˙"
+    disabled: "&ano⅄ ǝɹɐ ou ɹǝƃuoן ƃuᴉɹouƃᴉ &f{0}&a˙"
+  mail:
+    self: "&cno⅄ ʇouuɐɔ ןᴉɐɯ ɟןǝsɹnoʎ˙"
+    incoming-live: "&6[ןᴉɐW] &7<{0}> &f{1}"
+    sent: "&aןᴉɐW ʇuǝs oʇ &f{0}&a˙"
+    summary: "&6[ןᴉɐW] &eno⅄ ǝʌɐɥ &f{0}&e ʍǝu ǝƃɐssǝɯ(s)˙"
+    entry: "&6[ןᴉɐW] &f{0} &7<{1}> &f{2}"
+  nick:
+    cleared: "&aǝɯɐuʞɔᴉN pǝɹɐǝןɔ˙"
+    set: "&aǝɯɐuʞɔᴉN ʇǝs oʇ &f{0}&a˙"
+    too-long: "&csǝɯɐuʞɔᴉN uɐɔ ǝq ʇɐ ʇsoɯ &f{0}&c sɹǝʇɔɐɹɐɥɔ˙"
+  seen:
+    online: "&a{0} sᴉ ǝuᴉןuo ʇɥƃᴉɹ ʍou˙"
+    none: "&coN ʇsɐן-uǝǝs ɐʇɐp sʇsᴉxǝ ɹoɟ ʇɐɥʇ ɹǝʎɐןd˙"
+    result: "&a{0} sɐʍ ʇsɐן uǝǝs ʇɐ &f{1} &7({2} oƃɐ)˙"
+
+economy:
+  balance:
+    result: "&a{0}''s ǝɔuɐןɐq: &f{1}"
+  pay:
+    self: "&cno⅄ ʇouuɐɔ ʎɐd ɟןǝsɹnoʎ˙"
+    sent: "&aʇuǝS &f{0} &aoʇ &f{1}&a˙"
+    received: "&ano⅄ pǝʌᴉǝɔǝɹ &f{0} &aɯoɹɟ &f{1}&a˙"
+  baltop:
+    none: "&coN ǝɔuɐןɐq ɐʇɐp sᴉ ǝןqɐןᴉɐʌɐ ʇǝʎ˙"
+    header: "&6do⊥ sǝɔuɐןɐq:"
+    entry: "&e{0}˙ &f{1} &7- &a{2}"
+  eco:
+    updated: "&apǝʇɐpd∩ &f{0}''s&a ǝɔuɐןɐq oʇ &f{1}&a˙"
+    updated-notify: "&aɹno⅄ ǝɔuɐןɐq sɐʍ pǝʇɐpdn oʇ &f{0}&a˙"
+  error:
+    positive: "&cʇunoɯ∀ ʇsnɯ ǝq ɐ ǝʌᴉʇᴉsod ɹǝqɯnu˙"
+    numeric: "&cʇunoɯ∀ ʇsnɯ ǝq ɔᴉɹǝɯnu˙"
+    negative-balance: "&csǝɔuɐןɐꓭ ʇouuɐɔ ǝq ǝʌᴉʇɐƃǝu˙"
+    insufficient-funds: "&cno⅄ op ʇou ǝʌɐɥ ɥƃnouǝ ʎǝuoɯ˙"
+    account-not-found: "&cʇɐɥ⊥ ʇunoɔɔɐ pןnoɔ ʇou ǝq punoɟ˙"
+    generic: "&cǝɥ⊥ ʎɯouoɔǝ uoᴉʇɐɹǝdo pןnoɔ ʇou ǝq pǝʇǝןdɯoɔ˙"
+
+player:
+  heal:
+    success: "&aɥʇןɐǝH pǝɹoʇsǝɹ˙"
+  feed:
+    success: "&aɹǝƃunH pǝɹoʇsǝɹ˙"
+  clearinventory:
+    success: "&aʎɹoʇuǝʌuI pǝɹɐǝןɔ˙"
+  fly:
+    enabled: "&aʇɥƃᴉןℲ pǝןqɐuǝ˙"
+    disabled: "&aʇɥƃᴉןℲ pǝןqɐsᴉp˙"
+  god:
+    enabled: "&apo⅁ ǝpoɯ pǝןqɐuǝ˙"
+    disabled: "&apo⅁ ǝpoɯ pǝןqɐsᴉp˙"
+  gamemode:
+    self: "&aǝpoɯǝɯɐ⅁ pǝʇɐpdn oʇ &f{0}&a˙"
+    other:
+      sender: "&aʇǝS &f{0}''s&a ǝpoɯǝɯɐƃ oʇ &f{1}&a˙"
+      target: "&aɹno⅄ ǝpoɯǝɯɐƃ sɐʍ pǝʇɐpdn oʇ &f{0}&a˙"
+
+time:
+  moments: "sʇuǝɯoɯ"
+  minutes: "{0} ǝʇnuᴉɯ(s)"
+  hours: "{0} ɹnoɥ(s)"
+  days: "{0} ʎɐp(s)"

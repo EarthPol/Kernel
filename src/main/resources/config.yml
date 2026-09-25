@@ -1,0 +1,27 @@
+storage:
+  file: kernel.db
+
+economy:
+  starting-balance: 0.00
+  symbol: "$"
+  currency-singular: Coin
+  currency-plural: Coins
+  baltop-size: 10
+
+homes:
+  default-name: home
+
+teleport:
+  request-timeout-seconds: 60
+  warmup-seconds: 0
+  tpa-warmup-seconds: 5
+
+mail:
+  deliver-on-join: true
+
+nickname:
+  max-length: 32
+
+social-spy:
+  commands:
+    - "*"
