@@ -1,6 +1,6 @@
 package com.earthpol.kernel.listener;
 
-import com.europamc.europalib.entity.EntitySchedulerUtil;
+import com.earthpol.earthpollib.entity.EntitySchedulerUtil;
 import com.earthpol.kernel.Kernel;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

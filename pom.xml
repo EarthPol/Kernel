@@ -58,6 +58,10 @@
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/creatorfromhell/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -79,9 +83,9 @@
             <version>3.49.1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.europamc</groupId>
-            <artifactId>europalib</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <groupId>com.earthpol</groupId>
+            <artifactId>earthpollib</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>

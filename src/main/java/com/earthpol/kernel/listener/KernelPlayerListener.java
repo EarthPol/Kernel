@@ -8,7 +8,7 @@ import com.earthpol.kernel.data.model.StoredPlayer;
 import com.earthpol.kernel.service.BackService;
 import com.earthpol.kernel.service.PlayerStateCache;
 import com.earthpol.kernel.service.SocialSpyService;
-import com.europamc.europalib.entity.EntitySchedulerUtil;
+import com.earthpol.earthpollib.entity.EntitySchedulerUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

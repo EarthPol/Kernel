@@ -1,10 +1,10 @@
 package com.earthpol.kernel.service;
 
-import com.europamc.europalib.entity.EntitySchedulerUtil;
-import com.europamc.europalib.teleport.TeleportContext;
-import com.europamc.europalib.teleport.TeleportOutcome;
-import com.europamc.europalib.teleport.TeleportOutcomeHandler;
-import com.europamc.europalib.teleport.Teleporter;
+import com.earthpol.earthpollib.entity.EntitySchedulerUtil;
+import com.earthpol.earthpollib.teleport.TeleportContext;
+import com.earthpol.earthpollib.teleport.TeleportOutcome;
+import com.earthpol.earthpollib.teleport.TeleportOutcomeHandler;
+import com.earthpol.earthpollib.teleport.Teleporter;
 import com.earthpol.kernel.Kernel;
 import com.earthpol.kernel.config.KernelSettings;
 import org.bukkit.Location;

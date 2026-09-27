@@ -10,7 +10,7 @@ import com.earthpol.kernel.service.PlayerStateCache;
 import com.earthpol.kernel.service.SocialSpyService;
 import com.earthpol.kernel.service.TeleportExecutionService;
 import com.earthpol.kernel.service.TeleportService;
-import com.europamc.europalib.entity.EntitySchedulerUtil;
+import com.earthpol.earthpollib.entity.EntitySchedulerUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
