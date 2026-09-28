@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -39,9 +40,15 @@ public final class TeleportCommands extends BaseCommandHandler {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         String commandName = command.getName().toLowerCase(Locale.ROOT);
+        if (commandName.equals("tp") && (args.length == 1 || args.length == 2)
+            && !looksLikeCoordinateToken(args[0])) {
+            String prefix = args[args.length - 1];
+            List<String> matches = new ArrayList<>(completeOnlinePlayers(prefix));
+            matches.addAll(completeOptions(prefix, List.of("@s", "@p", "@r", "@a")));
+            return matches;
+        }
         if (switch (commandName) {
             case "tpa", "tphere", "tpo" -> args.length == 1;
-            case "tp" -> args.length == 1 && !looksLikeCoordinateToken(args[0]);
             default -> false;
         }) {
             return completeOnlinePlayers(args[0]);
@@ -203,7 +210,30 @@ public final class TeleportCommands extends BaseCommandHandler {
         }
 
         if (args.length == 1) {
-            return teleportToPlayer(player, args[0], false, true);
+            Player target = resolveSingleTpPlayer(player, args[0]);
+            return target == null || teleportToPlayer(player, target, false, true);
+        }
+
+        if (args.length == 2) {
+            if (!requirePermission(sender, "kernel.command.tp.others")) {
+                return true;
+            }
+            List<Player> targets = resolveTpPlayers(player, args[0]);
+            if (targets.isEmpty()) {
+                return true;
+            }
+            Player destination = resolveSingleTpPlayer(player, args[1]);
+            if (destination == null) {
+                return true;
+            }
+            if (stateCache.isTeleportBlocked(destination.getUniqueId())) {
+                message(sender, "teleport.tp.blocked");
+                return true;
+            }
+            for (Player target : targets) {
+                teleportToPlayer(target, destination, false, true);
+            }
+            return true;
         }
 
         if (args.length == 3) {
@@ -307,6 +337,41 @@ public final class TeleportCommands extends BaseCommandHandler {
             return true;
         }
 
+        return teleportToPlayer(player, target, overrideToggle, ignoreDestinationSafety);
+    }
+
+    private List<Player> resolveTpPlayers(Player sender, String input) {
+        List<Player> targets;
+        if (input.startsWith("@")) {
+            try {
+                targets = plugin.getServer().selectEntities(sender, input).stream()
+                    .filter(Player.class::isInstance)
+                    .map(Player.class::cast)
+                    .toList();
+            } catch (IllegalArgumentException exception) {
+                message(sender, "teleport.tp.selector-invalid");
+                return List.of();
+            }
+        } else {
+            Player target = findOnlinePlayer(input);
+            targets = target == null ? List.of() : List.of(target);
+        }
+        if (targets.isEmpty()) {
+            message(sender, "error.player-not-online");
+        }
+        return targets;
+    }
+
+    private Player resolveSingleTpPlayer(Player sender, String input) {
+        List<Player> targets = resolveTpPlayers(sender, input);
+        if (targets.size() > 1) {
+            message(sender, "teleport.tp.selector-single");
+        }
+        return targets.size() == 1 ? targets.getFirst() : null;
+    }
+
+    private boolean teleportToPlayer(Player player, Player target, boolean overrideToggle, boolean ignoreDestinationSafety) {
+
         if (target.getUniqueId().equals(player.getUniqueId())) {
             message(player, "teleport.tp.self");
             return true;
@@ -360,16 +425,19 @@ public final class TeleportCommands extends BaseCommandHandler {
     }
 
     private boolean teleportOtherToCoordinates(Player sender, String[] args, boolean ignoreDestinationSafety) {
-        Player target = findOnlinePlayer(args[0]);
-        if (target == null) {
-            message(sender, "error.player-not-online");
-            return true;
+        for (Player target : resolveTpPlayers(sender, args[0])) {
+            if (!teleportOtherToCoordinates(sender, target, args, ignoreDestinationSafety)) {
+                break;
+            }
         }
+        return true;
+    }
 
+    private boolean teleportOtherToCoordinates(Player sender, Player target, String[] args, boolean ignoreDestinationSafety) {
         Location location = coordinateLocation(sender, target, args[1], args[2], args[3]);
         if (location == null) {
             message(sender, "teleport.tp.coords.invalid");
-            return true;
+            return false;
         }
 
         String x = formatCoordinate(location.getX());

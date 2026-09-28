@@ -89,6 +89,8 @@ teleport:
     on: "&aTeleport requests and direct teleports to you are now blocked."
     off: "&aTeleport requests and direct teleports to you are now allowed."
   tp:
+    selector-invalid: "&cInvalid player selector."
+    selector-single: "&cThe destination must match exactly one player."
     self: "&cYou are already there."
     blocked: "&cThat player is not accepting direct teleports. Use &f/tpo&c if you have access."
     player: "&aTeleported to &f{0}&a."

@@ -121,7 +121,7 @@ commands:
     permission: kernel.command.speed
   tp:
     description: Teleport to a player or coordinates.
-    usage: /tp <player>|<x|~offset> <y|~offset> <z|~offset>|<player> <x|~offset> <y|~offset> <z|~offset>
+    usage: /tp <player|selector>|<targets> <destination>|<x|~offset> <y|~offset> <z|~offset>|<player|selector> <x|~offset> <y|~offset> <z|~offset>
     permission: kernel.command.tp
   tppos:
     description: Teleport to coordinates.
