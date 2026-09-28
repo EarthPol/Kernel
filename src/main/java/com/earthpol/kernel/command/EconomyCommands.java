@@ -74,13 +74,18 @@ public final class EconomyCommands extends BaseCommandHandler {
             }
         }
 
-        BigDecimal balance = repository.getBalance(lookup.uuid());
-        message(sender, "economy.balance.result", lookup.name(), settings.format(balance));
+        String balance = plugin.economyBridge() == null
+            ? settings.format(repository.getBalance(lookup.uuid()))
+            : plugin.economyBridge().formatBalance(lookup.uuid());
+        message(sender, "economy.balance.result", lookup.name(), balance);
         return true;
     }
 
     private boolean handlePay(CommandSender sender, String[] args) {
         if (!requirePermission(sender, "kernel.command.pay")) {
+            return true;
+        }
+        if (deferToExternalEconomy(sender)) {
             return true;
         }
 
@@ -129,6 +134,9 @@ public final class EconomyCommands extends BaseCommandHandler {
         if (!requirePermission(sender, "kernel.command.baltop")) {
             return true;
         }
+        if (deferToExternalEconomy(sender)) {
+            return true;
+        }
 
         List<BalanceEntry> entries = repository.topBalances(settings.baltopSize());
         if (entries.isEmpty()) {
@@ -146,6 +154,9 @@ public final class EconomyCommands extends BaseCommandHandler {
 
     private boolean handleEconomy(CommandSender sender, String[] args) {
         if (!requirePermission(sender, "kernel.command.eco")) {
+            return true;
+        }
+        if (deferToExternalEconomy(sender)) {
             return true;
         }
 
@@ -201,6 +212,15 @@ public final class EconomyCommands extends BaseCommandHandler {
         if (onlineTarget != null) {
             message(onlineTarget, "economy.eco.updated-notify", settings.format(operation.balance()));
         }
+        return true;
+    }
+
+    private boolean deferToExternalEconomy(CommandSender sender) {
+        String provider = plugin.economyBridge() == null ? null : plugin.economyBridge().externalProviderName();
+        if (provider == null) {
+            return false;
+        }
+        message(sender, "economy.external-provider", provider);
         return true;
     }
 

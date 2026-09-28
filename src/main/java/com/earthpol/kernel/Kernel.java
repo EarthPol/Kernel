@@ -23,6 +23,7 @@ import com.earthpol.kernel.data.KernelDatabase;
 import com.earthpol.kernel.data.KernelRepository;
 import com.earthpol.kernel.data.model.StoredPlayer;
 import com.earthpol.kernel.economy.LegacyVaultBridge;
+import com.earthpol.kernel.economy.EconomyBridge;
 import com.earthpol.kernel.listener.EnderChestViewListener;
 import com.earthpol.kernel.listener.KernelPlayerListener;
 import com.earthpol.kernel.service.BackService;
@@ -58,7 +59,7 @@ public final class Kernel extends JavaPlugin {
     private ConversationService conversationService;
     private PlayerStateCache stateCache;
     private SocialSpyService socialSpyService;
-    private AutoCloseable economyBridge;
+    private EconomyBridge economyBridge;
     private TranslationService translationService;
     private KernelPlayerListener playerListener;
     private EnderChestViewListener enderChestViewListener;
@@ -347,14 +348,18 @@ public final class Kernel extends JavaPlugin {
         getServer().getServicesManager().unregister(KernelApi.class, api);
     }
 
-    private AutoCloseable registerEconomyBridge() {
+    public EconomyBridge economyBridge() {
+        return economyBridge;
+    }
+
+    private EconomyBridge registerEconomyBridge() {
         if (!isClassPresent("net.milkbowl.vault.economy.Economy")) {
             return null;
         }
 
         try {
-            AutoCloseable bridge = new LegacyVaultBridge(this, repository, settings);
-            getLogger().info("Registered a Vault/VaultUnlocked economy provider.");
+            EconomyBridge bridge = new LegacyVaultBridge(this, repository, settings);
+            getLogger().info("Enabled Vault/VaultUnlocked economy integration with Kernel as a fallback.");
             return bridge;
         } catch (Throwable throwable) {
             getLogger().log(Level.WARNING, "Unable to register the Vault/VaultUnlocked economy bridge.", throwable);

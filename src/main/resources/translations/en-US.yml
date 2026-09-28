@@ -135,6 +135,7 @@ communication:
     ip: "&7IP: &f{0}"
 
 economy:
+  external-provider: "&eEconomy is managed by {0}. Use that plugin''s commands for payments, balance changes, and rankings."
   balance:
     result: "&a{0}''s balance: &f{1}"
   pay:
